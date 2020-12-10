@@ -1,5 +1,6 @@
-FROM python:3.9-buster-slim
+FROM python:3.9-slim-buster
 
 RUN apt-get update \
 && apt-get install -y build-essential gcc \
-&& pip3 install lndgrpc purerpc
+&& python3 -m venv /opt/venv
+&& ./opt/venv/bin/pip install lndgrpc purerpc
